@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漳州东神工作室网络科技有限公司 - 首页</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航栏 */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            color: #0066cc;
+            margin-left: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+        
+        /* 英雄区域 */
+        .hero {
+            background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #fff;
+            color: #0066cc;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #f0f8ff;
+            transform: translateY(-2px);
+        }
+        
+        /* 服务区域 */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: #666;
+        }
+        
+        /* 关于我们 */
+        .about {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #fff;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .hero h2 {
+                font-size: 32px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>东神科技</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="container">
+            <h2>引领中国数字化时代</h2>
+            <p>漳州东神工作室网络科技有限公司，专注于为企业提供全方位的数字化解决方案，助力企业在数字时代脱颖而出。</p>
+        </div>
+    </section>
+
+    <!-- 服务区域 -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>核心业务</h2>
+                <p>我们提供全方位的数字化服务，满足企业不同发展阶段的需求</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>软件开发</h3>
+                    <p>定制化软件开发，满足企业特定业务需求，提高工作效率。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>网站建设</h3>
+                    <p>专业网站设计与开发，打造企业在线形象，提升品牌价值。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>移动应用</h3>
+                    <p>iOS和Android应用开发，拓展移动端业务，增强用户连接。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3>云服务</h3>
+                    <p>安全可靠的云服务解决方案，助力企业数字化转型。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>数据分析</h3>
+                    <p>深度数据挖掘与分析，提供商业洞察，驱动业务增长。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI智能</h3>
+                    <p>人工智能技术应用，赋能企业智能化升级。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡</div>
+                    <h3>网络安全</h3>
+                    <p>实时防御与智能监测并举，阻断攻击于边界，保障业务7×24小时稳如磐石。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💾</div>
+                    <h3>操作系统</h3>
+                    <p>一键部署、持续更新，兼容主流生态，让服务器始终运行在干净、快速、安全的状态。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🗄</div>
+                    <h3>服务器</h3>
+                    <p>弹性扩容、分钟级交付，底层多线BGP+全冗余架构，为高并发业务提供澎湃动力。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💹</div>
+                    <h3>金融支付-基础</h3>
+                    <p>银行级加密+多重风控，支持QQ/微信/支付宝/话费/银联一键接入，交易成功率≥100%，合规省心。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>关于东神科技</h2>
+                    <p>漳州东神工作室网络科技有限公司成立于202*年，是一家专注于数字化解决方案的高新技术企业。我们致力于通过技术创新，为企业提供全方位的数字化服务。</p>
+                    <p>公司拥有一支经验丰富的技术团队，在软件开发、网站建设、移动应用、云服务等领域具有深厚的技术积累和丰富的项目经验。</p>
+                    <p>我们始终坚持以客户需求为导向，以技术创新为驱动，为客户提供高质量、高效率的数字化解决方案，助力企业在数字时代实现业务增长和转型升级。</p>
+                </div>
+                <!-- 同一目录下保证有 bgshj.png -->
+<div style="width:100%; position:relative; padding-bottom:56.25%;">
+    <img src="bgshj.png" alt="公司团队/办公环境图片"
+         style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>东神科技</h3>
+                    <p>引领中国数字化时代。我们致力于为企业提供全方位的数字化解决方案。</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <ul class="footer-links">
+                        <li>地址：福建省漳州市龙海区</li>
+                        <li>电话：05966108372</li>
+                        <li>邮箱：dongshengamestudio@qq.com</li>
+                    </ul>
+                </div>
+
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 漳州东神工作室网络科技有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

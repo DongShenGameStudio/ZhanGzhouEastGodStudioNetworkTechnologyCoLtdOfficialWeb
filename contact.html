@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漳州东神工作室网络科技有限公司 - 联系我们</title>
+    <style>
+        /* 全局样式 - 与首页保持一致 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航栏 - 与首页保持一致 */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            color: #0066cc;
+            margin-left: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+        
+        /* 联系页面特定样式 */
+        .page-header {
+            background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .page-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .page-header p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-info h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+            color: #0066cc;
+            margin-right: 15px;
+            width: 30px;
+        }
+        
+        .contact-details h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .contact-details p {
+            color: #666;
+        }
+        
+        .contact-form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-form h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #0066cc;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: #004d99;
+            transform: translateY(-2px);
+        }
+        
+        .map-section {
+            padding: 0 0 80px;
+        }
+        
+        .map-container {
+            height: 400px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+        
+        .faq-section {
+            background-color: #fff;
+            padding: 80px 0;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-toggle {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        /* 页脚 - 与首页保持一致 */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #fff;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .page-header h2 {
+                font-size: 28px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>东神科技</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="contact.html" style="color: #0066cc;">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 页面头部 -->
+    <section class="page-header">
+        <div class="container">
+            <h2>联系我们</h2>
+            <p>我们期待与您合作，为您提供专业的数字化解决方案</p>
+        </div>
+    </section>
+
+    <!-- 联系信息与表单 -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>联系信息</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>公司地址</h3>
+                            <p>福建省漳州市龙海区白水镇西凤小学东150米(X512县道北)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>联系电话</h3>
+                            <p>05966108372</p>
+                            <p>18150148372</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h3>电子邮箱</h3>
+                            <p>dongshengamestudio@qq.com</p>
+                        </div>
+                    </div>
+
+                    <!-- 地图 -->
+                        <div class="contact-item">
+                        <div class="contact-icon">🛰</div>
+                        <div class="contact-details">
+                            <h3>公司位置如下地图显示：↓</h3>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- 地图区域：多级容错 + 精准坐标 -->
+    <section class="map-section">
+        <div class="container">
+            <div id="map-box" style="width:100%;height:400px;border-radius:8px;overflow:hidden;"></div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>关于我们</h3>
+                    <p>漳州东神工作室网络科技有限公司致力于为企业提供全方位的数字化解决方案。</p>
+                </div>
+                <div class="contact-form">
+                    <h2>商务合作</h2>
+                    <p>欢迎通过联系信息里的电话或邮箱与我们联系，我们将在48小时内回复。</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 漳州东神工作室网络科技有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 地图脚本：高德→百度→腾讯→静态图，精准坐标 -->
+    <script>
+        /* ========== 配置：你给的精准坐标 ========== */
+        const LNG = 117.88543581962581;
+        const LAT = 24.312833025641865;
+        const BOX = document.getElementById('map-box');
+
+        /* ---- 1. 高德优先 ---- */
+        function tryGaode(){
+            const s = document.createElement('script');
+            s.src = 'https://webapi.amap.com/maps?v=2.0&key=c176ad0e240993eb0cf367836a814fb1&callback=initGaode';
+            s.onerror = tryBaidu;
+            document.head.appendChild(s);
+        }
+        window.initGaode = function(){
+            try{
+                const map = new AMap.Map('map-box',{zoom:17,center:[LNG,LAT]});
+                new AMap.Marker({position:[LNG,LAT],title:'漳州东神工作室'}).setMap(map);
+            }catch(e){ tryBaidu(); }
+        };
+
+        /* ---- 2. 百度回落 ---- */
+        function tryBaidu(){
+            const s = document.createElement('script');
+            s.src = 'https://api.map.baidu.com/api?v=3.0&ak=KtAU09XjOH4HLY4FjQ6GE5BeDSyz39yu&callback=initBaidu';
+            s.onerror = tryTencent;
+            document.head.appendChild(s);
+        }
+        window.initBaidu = function(){
+            try{
+                const map = new BMap.Map('map-box');
+                const point = new BMap.Point(LNG,LAT);
+                map.centerAndZoom(point,17);
+                map.addOverlay(new BMap.Marker(point));
+                map.enableScrollWheelZoom(true);
+            }catch(e){ tryTencent(); }
+        };
+
+        /* ---- 3. 腾讯最后 ---- */
+        function tryTencent(){
+            const s = document.createElement('script');
+            s.src = 'https://map.qq.com/api/gljs?v=1.exp&key=ZNXBZ-KX4LH-BT2D3-WEWJ7-X25UV-6HBHR&callback=initTencent';
+            s.onerror = showStatic;
+            document.head.appendChild(s);
+        }
+        window.initTencent = function(){
+            try{
+                const center = new TMap.LatLng(LAT,LNG);
+                const map = new TMap.Map('map-box',{center:center,zoom:17});
+                new TMap.Marker({position:center,map:map});
+            }catch(e){ showStatic(); }
+        };
+
+        /* ---- 4. 静态图保底 ---- */
+        function showStatic(){
+            BOX.innerHTML = '<img src="gswz.png" alt="公司位置" style="width:100%;height:100%;object-fit:cover;">';
+        }
+
+        /* 启动链 */
+        tryGaode();
+    </script>
+</body>
+</html>
